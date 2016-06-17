@@ -47,10 +47,6 @@
             <solid_density_dry>                     1150.0  </solid_density_dry>
             <solid_density_initial>                 1305.25 </solid_density_initial>
 
-            <characteristic_pressure>             1e5  </characteristic_pressure>
-            <characteristic_temperature>          200  </characteristic_temperature>
-            <characteristic_vapour_mass_fraction> 0.01 </characteristic_vapour_mass_fraction>
-
             <dielectric_heating_term_enabled>     false</dielectric_heating_term_enabled>
             <volumetric_heat_loss_coeff>          0.0  </volumetric_heat_loss_coeff>
             <ambient_temperature>                 100.0</ambient_temperature>
