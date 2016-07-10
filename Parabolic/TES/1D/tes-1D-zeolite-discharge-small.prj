@@ -21,8 +21,14 @@
                 <secondary_variable type="static" internal_name="velocity_x" output_name="velocity_x" />
                 <secondary_variable type="static" internal_name="fct_vapour_partial_pressure" output_name="vapour_partial_pressure" />
                 <secondary_variable type="static" internal_name="relative_humidity" output_name="relative_humidity" />
-                <secondary_variable type="static" internal_name="loading" output_name="loading" />
-                <secondary_variable type="static" internal_name="equilibrium_loading" output_name="equilibrium_loading" />
+
+                <secondary_variable type="dynamic" internal="equilibrium_loading" external="equilibrium_loading">
+                    <plug sink_arg="adsorptive_partial_pressure" source="vapour_partial_pressure" />
+                    <plug sink_arg="adsorbent_temperature" source="TES_temperature" />
+                </secondary_variable>
+                <secondary_variable type="dynamic" internal="loading" external="loading">
+                    <plug sink_arg="adsorbent_density" source="TES_solid_density" />
+                </secondary_variable>
             </secondary_variables>
 
             <reaction_kinetics>
@@ -105,8 +111,6 @@
                         <variable> equilibrium_loading     </variable>
                         <variable> vapour_partial_pressure </variable>
                         <variable> relative_humidity       </variable>
-
-                        <variable> reaction_damping_factor </variable>
                     </variables>
                     <output_extrapolation_residuals>true</output_extrapolation_residuals>
                 </output>
@@ -122,7 +126,7 @@
                 <pair><repeat>  5 </repeat><delta_t> 0.002 </delta_t></pair>
                 <pair><repeat>  4 </repeat><delta_t> 0.005 </delta_t></pair>
                 <pair><repeat>  6 </repeat><delta_t> 0.01  </delta_t></pair>
-        </timesteps>
+            </timesteps>
         </time_stepping>
 
         <output>
