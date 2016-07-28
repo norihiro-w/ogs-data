@@ -98,9 +98,10 @@
             <process ref="TES_pcs">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
                 <convergence_criterion>
-                    <type>DeltaX</type>
+                    <type>PerComponentDeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1.e-3</abstol>
+                    <!--<abstols>1.e-6 1.e-6 1.e-6</abstols>-->
+                    <reltols>1.e-6 1.e-6 1.e-6</reltols>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -139,8 +140,8 @@
             <type>VTK</type>
             <prefix>tes_zeolite_discharge_small</prefix>
             <timesteps>
-                <pair><repeat> 1 </repeat><each_steps> 10 </each_steps></pair>
-                <pair><repeat> 1 </repeat><each_steps>  9 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 1 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 1 </each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
