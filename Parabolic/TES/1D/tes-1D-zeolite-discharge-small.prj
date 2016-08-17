@@ -127,6 +127,23 @@
     </time_loop>
 
     <parameters>
+        <parameter>
+            <name>p0</name>
+            <type>Constant</type>
+            <value>1e5</value>
+        </parameter>
+
+        <parameter>
+            <name>T0</name>
+            <type>Constant</type>
+            <value>303.15</value>
+        </parameter>
+
+        <parameter>
+            <name>xmV0</name>
+            <type>Constant</type>
+            <value>0.025</value>
+        </parameter>
     </parameters>
 
     <process_variables>
@@ -134,10 +151,7 @@
             <name>pressure</name>
             <components>1</components>
 
-            <initial_condition>
-                <type>Uniform</type>
-                <values>1e5</values>
-            </initial_condition>
+            <initial_condition>p0</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
@@ -162,10 +176,7 @@
             <name>temperature</name>
             <components>1</components>
 
-            <initial_condition>
-                <type>Uniform</type>
-                <values>303.15</values>
-            </initial_condition>
+            <initial_condition>T0</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
@@ -183,10 +194,7 @@
             <name>v_mass_frac</name>
             <components>1</components>
 
-            <initial_condition>
-                <type>Uniform</type>
-                <values>0.025</values>
-            </initial_condition>
+            <initial_condition>xmV0</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
